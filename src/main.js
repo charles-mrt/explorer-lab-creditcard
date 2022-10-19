@@ -13,26 +13,20 @@ function setCardType(type) {
         default: ["#000000", "#525252"]
     }
 
-
     creditCardBGColor01.setAttribute('fill', colors[type][0]);
     creditCardBGColor01.setAttribute('fill', colors[type][1]);
     creditCardLogo.setAttribute('src', `cc-${type}.svg`)
 
 }
-setCardType("mastercard")
+setCardType("visa")
 
 
 // security code
 const idSecurityCode = document.getElementById('security-code');
 
 
-
 function cardValidationMask() {
 
-    numberValidation();
-    cardHolderValidation();
-    expirationDate();
-    securityCode();
 
     /**
      *  card number validation
@@ -103,18 +97,22 @@ function cardValidationMask() {
             }
         }
         expirationDateMasked = IMask(expirationDate, expirationDatePattern);
-    } 
+    }
 
     /**
      *  security code validation
      * */
     function securityCode(securityCode, securityCodePattern, securityCodeMask) {
-        
+
         securityCode = idSecurityCode;
         securityCodePattern = { mask: "0000" }
         securityCodeMask = IMask(securityCode, securityCodePattern)
 
     }
+    numberValidation();
+    cardHolderValidation();
+    expirationDate();
+    securityCode();
 
 } cardValidationMask();
 
@@ -137,6 +135,13 @@ function cardVerificationCode() {
         idSecurityCode.onkeyup = function () {
             idSecurityCodeTyped.innerHTML = idSecurityCode.value;
             ccSecurityTyped.innerHTML = idSecurityCode.value;
+
+            const shiftcard = document.querySelector('.shift');
+            if (idSecurityCode.value.length === 3 || idSecurityCode.value.length === 4) {
+                shiftcard.classList.remove('hide')
+            } else {
+                shiftcard.classList.add('hide')
+            }
         }
 
         creditcard.classList.add('securityField');
@@ -145,14 +150,70 @@ function cardVerificationCode() {
         backOfCreditcard.classList.remove('cc-back-field');
 
 
-
         idSecurityCode.addEventListener('blur', () => {
             creditcard.classList.remove('securityField');
             creditcardFields.classList.remove('cc-erase-field');
             backOfCreditcard.classList.add('cc-back-field');
-
         })
+
+
     })
 
 } cardVerificationCode();
+
+
+function highlightcardField() {
+
+    const ccNumber = document.querySelector('.cc-number');
+    const ccNumberInput = document.getElementById('card-number');
+
+    const ccHolder = document.querySelector('.cc-holder .value')
+    const ccHolderInput = document.getElementById('card-holder');
+
+    const ccExpirationDate = document.querySelector('.cc-expiration .value');
+    const ccExpirationDateInput = document.getElementById('expiration-date');
+
+    handleCcNumberInput();
+    handleCcHolderInput();
+    handleCcHolderInput();
+    handleCcExpirationDateInput();
+
+    function changeElementColor(color) {
+        color.style.color = "#7c3aed";
+        color.style.backgroundColor = "#fff";
+    }
+    function ressetColor(color) {
+        color.style.color = "";
+        color.style.backgroundColor = "";
+    }
+
+    function handleCcNumberInput() {
+        ccNumberInput.addEventListener('focus', () => {
+            changeElementColor(ccNumber)
+        })
+        ccNumberInput.addEventListener('blur', () => {
+            ressetColor(ccNumber)
+        })
+    }
+
+    function handleCcHolderInput() {
+        ccHolderInput.addEventListener('focus', () => {
+            changeElementColor(ccHolder)
+        })
+        ccHolderInput.addEventListener('blur', () => {
+            ressetColor(ccHolder)
+        })
+    }
+
+    function handleCcExpirationDateInput() {
+        ccExpirationDateInput.addEventListener('focus', () => {
+            changeElementColor(ccExpirationDate)
+        })
+
+        ccExpirationDateInput.addEventListener('blur', () => {
+            ressetColor(ccExpirationDate)
+        })
+    }
+
+} highlightcardField()
 
