@@ -1,4 +1,5 @@
 import "./css/index.css"
+import IMask from "imask";
 
 const creditCardBGColor01 = document.querySelector(".cc-bg svg > g g:nth-child(1) path");
 const creditCardBGColor02 = document.querySelector(".cc-bg svg > g g:nth-child(2) path");
@@ -20,8 +21,106 @@ function setCardType(type) {
 }
 setCardType("mastercard")
 
+
+// security code
+const idSecurityCode = document.getElementById('security-code');
+
+
+
+function cardValidationMask() {
+
+    numberValidation();
+    cardHolderValidation();
+    expirationDate();
+    secorityCode();
+
+    /**
+     *  card number validation
+     * */
+    function numberValidation(cardNumber, cardNumberPattern, cardNumberMasked) {
+        cardNumber = document.getElementById('card-number');
+        cardNumberPattern = {
+            mask: [
+                {
+                    mask: "0000 0000 0000 0000",
+                    regex: /^4\d{0,15}/,
+                    cardType: "visa",
+                },
+                {
+                    mask: "0000 0000 0000 0000",
+                    regex: /(^5[1-5]\d{0,2}|^22[2-9]\d|^2[3,7]\d{0,2})\d{0,12}/,
+                    cardType: "mastercard",
+                },
+                {
+                    mask: "0000 0000 0000 0000",
+                    cardType: "default",
+                },
+            ],
+
+            dispatch: function (appended, dynamicMasked) {
+                const number = (dynamicMasked.value + appended).replace(/\D/g, "");
+                const foundMask = dynamicMasked.compiledMasks.find(function (item) {
+                    return number.match(item.regex);
+                })
+                return foundMask;
+            },
+        }
+
+        cardNumberMasked = IMask(cardNumber, cardNumberPattern);
+    }
+
+
+    /**
+     *  card holder validation
+     * */
+    function cardHolderValidation(cardHolder, cardHolderPattern, cardHolderMasked) {
+        cardHolder = document.getElementById("card-holder");
+        cardHolderPattern = {
+            mask: /^[a-záàâãéèêíïóôõöúçñ ]+$/i,
+
+        }
+        cardHolderMasked = IMask(cardHolder, cardHolderPattern);
+    }
+
+    /**
+     *  card expiration date validation
+     * */
+    function expirationDate(expirationDate, expirationDatePattern, expirationDateMasked) {
+        expirationDate = document.getElementById("expiration-date")
+        expirationDatePattern = {
+            mask: "MM{/}YY",
+            blocks: {
+                YY: {
+                    mask: IMask.MaskedRange,
+                    from: String(new Date().getFullYear()).slice(2),
+                    to: String(new Date().getFullYear() + 10).slice(2),
+                },
+                MM: {
+                    mask: IMask.MaskedRange,
+                    from: 1,
+                    to: 12
+                }
+            }
+        }
+        expirationDateMasked = IMask(expirationDate, expirationDatePattern);
+    } 
+
+    /**
+     *  security code validation
+     * */
+    function secorityCode(securityCode, securityCodePattern, securityCodeMask) {
+        
+        securityCode = idSecurityCode;
+        securityCodePattern = { mask: "0000" }
+        securityCodeMask = IMask(securityCode, securityCodePattern)
+
+    }
+
+} cardValidationMask();
+
+
 function cardVerificationCode() {
-    const idSecurityCode = document.getElementById('security-code');
+
     const creditcard = document.querySelector(".cc");
     const creditcardFields = document.querySelector(".cc-field");
 
