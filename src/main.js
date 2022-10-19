@@ -32,7 +32,7 @@ function cardValidationMask() {
     numberValidation();
     cardHolderValidation();
     expirationDate();
-    secorityCode();
+    securityCode();
 
     /**
      *  card number validation
@@ -108,7 +108,7 @@ function cardValidationMask() {
     /**
      *  security code validation
      * */
-    function secorityCode(securityCode, securityCodePattern, securityCodeMask) {
+    function securityCode(securityCode, securityCodePattern, securityCodeMask) {
         
         securityCode = idSecurityCode;
         securityCodePattern = { mask: "0000" }
