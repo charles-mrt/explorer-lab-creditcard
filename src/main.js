@@ -299,7 +299,7 @@ function submitCardData() {
 
     const addCardButton = document.querySelector("#add-card");
     addCardButton.addEventListener("click", () => {
-        //alert("clicado")
+        submitCardModal();
     });
     document.querySelector("form").addEventListener("submit", (event) => {
         event.preventDefault();
@@ -307,3 +307,12 @@ function submitCardData() {
 
 } submitCardData();
 
+
+function submitCardModal() {
+    const modal = document.querySelector(".modal");
+    modal.classList.remove('hide');
+
+    setTimeout(() => {
+        modal.classList.add('hide');
+      }, 2000)
+} 

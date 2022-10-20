@@ -49,3 +49,22 @@
   }
 }
 
+.modal {
+  width:100vw;
+  height:100vh;
+  background: white;
+  position: absolute;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: .5s;
+}
+.modal.hide {
+  display: none;
+}
+.modal h2 {
+  color: var(--violet-600);
+}
