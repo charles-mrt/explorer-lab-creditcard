@@ -55,15 +55,11 @@ function setCardType(type) {
     creditCardLogo.setAttribute('src', `cc-${type}.svg`)
 
 }
-setCardType("visa")
-
-
 
 
 /**
  *  card number validation
  * */
-
 
 function numberValidation(cardNumber, cardNumberPattern, cardNumberMasked) {
     cardNumber = cardNumberInput;
@@ -108,7 +104,8 @@ function cardHolderValidation(cardHolder, cardHolderPattern, cardHolderMasked) {
         mask: /^[a-záàâãéèêíïóôõöúçñ ]+$/i,
 
     }
-    return cardHolderMasked = IMask(cardHolder, cardHolderPattern);
+    cardHolderMasked = IMask(cardHolder, cardHolderPattern);
+    return cardHolderMasked;
 }
 
 /**
@@ -131,7 +128,9 @@ function expirationDate(expirationDate, expirationDatePattern, expirationDateMas
             }
         }
     }
-    return expirationDateMasked = IMask(expirationDate, expirationDatePattern);
+    expirationDateMasked = IMask(expirationDate, expirationDatePattern);
+
+    return expirationDateMasked;
 }
 
 /**
@@ -140,9 +139,10 @@ function expirationDate(expirationDate, expirationDatePattern, expirationDateMas
 function securityCode(securityCode, securityCodePattern, securityCodeMask) {
 
     securityCode = cardSecurityCodeInput;
-    securityCodePattern = { mask: "0000" }
-    return securityCodeMask = IMask(securityCode, securityCodePattern)
+    securityCodePattern = { mask: "0000" };
+    securityCodeMask = IMask(securityCode, securityCodePattern);
 
+    return securityCodeMask;
 }
 
 /**
@@ -157,6 +157,8 @@ function updateCardNumberWithUserData(number) {
 
 const cardNumberMask = numberValidation();
 cardNumberMask.on('accept', () => {
+    const cardType = cardNumberMask.masked.currentMask.cardType;
+    setCardType(cardType);
     updateCardNumberWithUserData(cardNumberMask.value);
 })
 
@@ -295,13 +297,13 @@ function highlightcardField() {
 
 function submitCardData() {
 
-  const addCardButton = document.querySelector("#add-card");
-addCardButton.addEventListener("click", () => {
-    //alert("clicado")
-});
-document.querySelector("form").addEventListener("submit", (event) => {
-    event.preventDefault();
-});
-  
-}submitCardData();
+    const addCardButton = document.querySelector("#add-card");
+    addCardButton.addEventListener("click", () => {
+        //alert("clicado")
+    });
+    document.querySelector("form").addEventListener("submit", (event) => {
+        event.preventDefault();
+    });
+
+} submitCardData();
 
