@@ -117,6 +117,38 @@ function cardValidationMask() {
 } cardValidationMask();
 
 
+function updateCardWithUserData() {
+    // card Number
+    const cardNumberInput = document.getElementById('card-number');
+    cardNumberInput.addEventListener('input', () => {
+        const ccNumber = document.querySelector('.cc-info .cc-number');
+
+        ccNumber.innerText = cardNumberInput.value.length === 0
+            ? "0000 0000 0000 0000"
+            : cardNumberInput.value;
+    });
+
+    //card user Name
+    const cardHolderInput = document.getElementById("card-holder");
+    cardHolderInput.addEventListener("input", () => {
+        const ccHolder = document.querySelector('.cc-holder .value');
+        ccHolder.innerText = cardHolderInput.value.length === 0
+            ? "Seu nome"
+            : cardHolderInput.value;
+    });
+
+    // card expiration date
+    const cardExpirationDateInput = document.getElementById('expiration-date');
+    cardExpirationDateInput.addEventListener('input', () => {
+        const ccExpiration = document.querySelector('.cc-expiration .value');
+        ccExpiration.innerText = cardExpirationDateInput.value.length === 0
+            ? "00/00"
+            : cardExpirationDateInput.value;
+    });
+
+
+} updateCardWithUserData();
+
 function cardVerificationCode() {
 
     const creditcard = document.querySelector(".cc");
@@ -133,8 +165,12 @@ function cardVerificationCode() {
         const idSecurityCodeTyped = document.querySelector('.cc-back > div span')
 
         idSecurityCode.onkeyup = function () {
-            idSecurityCodeTyped.innerHTML = idSecurityCode.value;
-            ccSecurityTyped.innerHTML = idSecurityCode.value;
+            idSecurityCodeTyped.innerText = idSecurityCode.value.length === 0
+                ? "123"
+                : idSecurityCode.value;
+            ccSecurityTyped.innerText = idSecurityCode.value.length === 0
+                ? "000"
+                : idSecurityCode.value;
 
             const shiftcard = document.querySelector('.shift');
             if (idSecurityCode.value.length === 3 || idSecurityCode.value.length === 4) {
