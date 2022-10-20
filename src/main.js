@@ -296,8 +296,20 @@ function highlightcardField() {
 
 
 function submitCardData() {
-
     const addCardButton = document.querySelector("#add-card");
+    const inputFields = document.querySelectorAll(".input-wrapper input");
+
+    // handles empty inputs to enable or disable submit button
+    inputFields.forEach(function (element) {
+        element.addEventListener("input", () => {
+            Array.from(inputFields).filter(input => input.value !== ""
+                ? addCardButton.disabled = false
+                : addCardButton.disabled = true
+            );
+        });
+    });
+
+
     addCardButton.addEventListener("click", () => {
         submitCardModal();
     });
@@ -314,5 +326,5 @@ function submitCardModal() {
 
     setTimeout(() => {
         modal.classList.add('hide');
-      }, 2000)
+    }, 2000)
 } 
