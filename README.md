@@ -18,7 +18,7 @@ Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologia
 <br>
 
 <p align="center">
-  <img alt="rocketpay" src="https://github.com/charles-mrt/explorer-lab-creditcard/issues/1#issue-1417107734" width="100%">
+  <img alt="rocketpay" src="https://user-images.githubusercontent.com/60299718/197034748-25a14ba2-b5c8-459a-81aa-89a027c8351a.jpg" width="100%">
 </p>
 
 ## 🚀 Tecnologias
