@@ -132,9 +132,11 @@
   .shift {
     background: var(--violet-600)!important;
     color: var(--gray-200)!important;
-    border: 1px solid var(--gray-200);
+    border: 1px solid var(--violet-600);
     border-radius: 8px;
     transition: .3s;
+    cursor: pointer;
+    
   }
   .shift:hover {
   filter: brightness(1.1);
