@@ -12,7 +12,7 @@ Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologia
 </p>
 
 <p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+  <img alt="License" src="https://github.com/charles-mrt/explorer-lab-creditcard/issues/1#issue-1417107734">
 </p>
 
 <br>
