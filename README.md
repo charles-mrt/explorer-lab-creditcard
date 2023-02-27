@@ -1,14 +1,14 @@
-<h1 align="center"> My Grandma's Clock </h1>
+<h1 align="center"> Explorer Lab #01 </h1>
 
 <p align="center">
-Digital wall clock for people with difficulty memorizing.
+Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologias WEB.
 </p>
 
 <p align="center">
-  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-testApp">test App</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-license">License</a>
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">Licença</a>
 </p>
 
 <p align="center">
@@ -18,36 +18,32 @@ Digital wall clock for people with difficulty memorizing.
 <br>
 
 <p align="center">
-  <img alt="" src="" width="100%">
+  <img alt="rocketpay" src=".github/project.png" width="100%">
 </p>
 
-<a id="user-content--technologies" class="anchor" aria-hidden="true" href="#-technologies"></a>
-## 🚀 Technologies
+## 🚀 Tecnologias
 
-This project was developed with the following technologies:
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- HTML and CSS
-- JavaScript
+- HTML e CSS
+- JavaScript e JSON
+- [Node e NPM](https://nodejs.org/)
+- [Vite](https://vitejs.dev/)
+- [iMask](https://imask.js.org)
 
-<a id="user-content--project" class="anchor" aria-hidden="true" href="#-project"></a>
-## 💻 Project
+## 💻 Projeto
 
-My Grandma's Clock is a component that simulates a digital wall clock for people with difficulty memorizing in with the date of the month and day cycle, especially at dawn.
-It is possible to add the username, change the colors and dynamically change between am/pm or day cycles such as morning, afternoon, night and dawn.
+O Rocketpay é um componente que simula o formulário de preenchimento de cartão de crédito, onde é possível adicionar máscara aos inputs e atualizar elementos HTML via DOM.
 
-## 💻🔖 Project's goal
-I developed this app with the aim of facilitating my grandmother's routine so that she knows what the date is, the day of the week and the cycle of the day, as she suffers from a disease that causes forgetfulness.
-In this case, we keep a smartphone connected 24 hours a day in the app and turned on like a wall clock.
+## 🔖 Layout
 
-<a id="user-content--testApp" class="anchor" aria-hidden="true" href="#-testApp"></a>
-## 💻 Test App
-To test the project you can access through  [DESSE LINK](https://charles-mrt.github.io/my-grandma-clock/)
+Para testar o projeto você pode acessar através  [DESSE LINK](https://rocket-pay-iota.vercel.app/)
+Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/gpqavL469k0pPUGOmAQEM9/Explorer-Lab-%2301/duplicate). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
-<a id="memo-license" class="anchor" aria-hidden="true" href="#-memo-license"></a>
-## :memo: License
+## :memo: Licença
 
-This project is licensed under the MIT license.
+Esse projeto está sob a licença MIT.
 
 ---
 
-Made with ♥ by Charles
+Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discord.gg/rocketseat)
