@@ -1,14 +1,14 @@
-<h1 align="center"> Explorer Lab #01 </h1>
+<h1 align="center"> My Grandma's Clock </h1>
 
 <p align="center">
-Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologias WEB.
+Digital wall clock for people with difficulty memorizing.
 </p>
 
 <p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-testApp">test App</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
 </p>
 
 <p align="center">
@@ -18,32 +18,35 @@ Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologia
 <br>
 
 <p align="center">
-  <img alt="rocketpay" src="https://user-images.githubusercontent.com/60299718/197034748-25a14ba2-b5c8-459a-81aa-89a027c8351a.jpg" width="100%">
+  <img alt="" src="" width="100%">
 </p>
 
-## 🚀 Tecnologias
+<a id="user-content--technologies" class="anchor" aria-hidden="true" href="#-technologies"></a>
+## 🚀 Technologies
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed with the following technologies:
 
-- HTML e CSS
-- JavaScript e JSON
-- [Node e NPM](https://nodejs.org/)
-- [Vite](https://vitejs.dev/)
-- [iMask](https://imask.js.org)
+- HTML and CSS
+- JavaScript
 
-## 💻 Projeto
+<a id="user-content--project" class="anchor" aria-hidden="true" href="#-project"></a>
+## 💻 Project
 
-O Rocketpay é um componente que simula o formulário de preenchimento de cartão de crédito, onde é possível adicionar máscara aos inputs e atualizar elementos HTML via DOM.
+My Grandma's Clock is a component that simulates a digital wall clock for people with difficulty memorizing in with the date of the month and day cycle, especially at dawn.
+It is possible to add the username, change the colors and dynamically change between am/pm or day cycles such as morning, afternoon, night and dawn.
 
-Para testar o projeto você pode acessar através  [DESSE LINK](https://rocket-pay-iota.vercel.app/)
-## 🔖 Layout
+## 💻🔖 Project's goal
+I developed this app with the aim of facilitating my grandmother's routine so that she knows what the date is, the day of the week and the cycle of the day, as she suffers from a disease that causes forgetfulness.
+In this case, we keep a smartphone connected 24 hours a day in the app and turned on like a wall clock.
 
-Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/gpqavL469k0pPUGOmAQEM9/Explorer-Lab-%2301/duplicate). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
+<a id="user-content--testApp" class="anchor" aria-hidden="true" href="#-testApp"></a>
+To test the project you can access through  [DESSE LINK](https://charles-mrt.github.io/my-grandma-clock/)
 
-## :memo: Licença
+<a id="memo-license" class="anchor" aria-hidden="true" href="#-memo-license"></a>
+## :memo: License
 
-Esse projeto está sob a licença MIT.
+This project is licensed under the MIT license.
 
 ---
 
-Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discord.gg/rocketseat)
+Made with ♥ by Charles
